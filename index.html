@@ -109,7 +109,24 @@
   </style>
 </head>
 <body>
-  <div class="header">MENU</div>
+  <div class="menu-bar">MENU</div>
+
+  <style>
+    .menu-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #e53935;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 12px 0;
+      z-index: 2000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+  </style>
 
   <!-- Добавляем новые шрифты -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -237,18 +254,58 @@
   <!-- Сеты -->
   <div class="group">
     <div class="group-title">Сеты</div>
-    <ul class="dish-list">
-      <li class="dish"><span class="dish-name">Сет "Пирамида" 60 шт</span><span class="dish-price">9890 kzt</span></li>
-      <li class="dish"><span class="dish-name">Сет "Престиж" 50 шт</span><span class="dish-price">8590 kzt</span></li>
-      <li class="dish"><span class="dish-name">Сет "Теплый" 40 шт</span><span class="dish-price">7690 kzt</span></li>
-      <li class="dish"><span class="dish-name">Сет "От шефа" 40 шт</span><span class="dish-price">7590 kzt</span></li>
-      <li class="dish"><span class="dish-name">Сет "Шубар" 40 шт</span><span class="dish-price">7290 kzt</span></li>
-      <li class="dish"><span class="dish-name">Сет "04" 34 шт</span><span class="dish-price">6710 kzt</span></li>
-      <li class="dish"><span class="dish-name">Сет "Жаренный" 30 шт</span><span class="dish-price">5890 kzt</span></li>
-      <li class="dish"><span class="dish-name">Сет "Фаворит" 30 шт</span><span class="dish-price">5890 kzt</span></li>
-      <li class="dish"><span class="dish-name">Суши-сэндвич с курицей</span><span class="dish-price">3460 kzt</span></li>
-      <li class="dish"><span class="dish-name">Суши-сэндвич с лососем</span><span class="dish-price">3460 kzt</span></li>
-    </ul>
+    <div class="combo-grid">
+      <div class="combo-card">
+        <div class="combo-title">Сет "Пирамида"</div>
+        <div class="combo-price">9890 kzt</div>
+        <div class="combo-desc">10 шт тауық қанаттары + 1 соус<br>2 чизбургера куриных<br>2 картошки фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Сет "Престиж"</div>
+        <div class="combo-price">8590 kzt</div>
+        <div class="combo-desc">10 шт тауық қанаттары + 1 соус<br>2 чизбургера куриных<br>2 картошки фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Сет "Теплый"</div>
+        <div class="combo-price">7690 kzt</div>
+        <div class="combo-desc">30 шт тауық қанаттары + 3 соуса<br>Пицца "Пепперони"<br>Картошка фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Сет "От шефа"</div>
+        <div class="combo-price">7590 kzt</div>
+        <div class="combo-desc">20 шт тауық қанаттары + 2 соуса<br>Пицца "Пепперони"<br>2 картошки фри<br>2 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Сет "Шубар"</div>
+        <div class="combo-price">7290 kzt</div>
+        <div class="combo-desc">20 шт тауық қанаттары + 2 соуса<br>Пицца "Пепперони"<br>Пицца "Маргарита"<br>Картошка фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Сет "04"</div>
+        <div class="combo-price">6710 kzt</div>
+        <div class="combo-desc">20 шт тауық қанаттары + 2 соуса<br>Пицца "Пепперони"<br>Пицца "Маргарита"<br>Картошка фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Сет "Жареный"</div>
+        <div class="combo-price">5890 kzt</div>
+        <div class="combo-desc">20 шт тауық қанаттары + 2 соуса<br>Пицца "Пепперони"<br>Пицца "Маргарита"<br>Картошка фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Сет "Фаворит"</div>
+        <div class="combo-price">5890 kzt</div>
+        <div class="combo-desc">20 шт тауық қанаттары + 2 соуса<br>Пицца "Пепперони"<br>Пицца "Маргарита"<br>Картошка фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Суши-сэндвич с курицей</div>
+        <div class="combo-price">3460 kzt</div>
+        <div class="combo-desc">20 шт тауық қанаттары + 2 соуса<br>Пицца "Пепперони"<br>Пицца "Маргарита"<br>Картошка фри<br>1 л Pepsi</div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-title">Суши-сэндвич с лососем</div>
+        <div class="combo-price">3460 kzt</div>
+        <div class="combo-desc">20 шт тауық қанаттары + 2 соуса<br>Пицца "Пепперони"<br>Пицца "Маргарита"<br>Картошка фри<br>1 л Pepsi</div>
+      </div>
+    </div>
   </div>
 
   <!-- Комбо -->
@@ -450,8 +507,16 @@
   .social-logo {
     width: 30px;
     height: 30px;
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); */
   }
 </style>
 </body>
+</html>
+<style>
+  html, body {
+    overflow-x: hidden;
+    width: 100vw;
+    max-width: 100vw;
+  }
+</style>
 </html>
