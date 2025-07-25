@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мәзір</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .top-bar {
+      height: 3cm;
+      background: #000;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .back-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 1px solid #FF4500;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 2;
+    }
+
+    .back-button:hover {
+      background: #FF4500;
+      transform: scale(1.05);
+    }
+
+    .back-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .marquee-container {
+      flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-left: 20px; /* отступ от кнопки Назад */
+      position: relative;
+    }
+
+    .marquee {
+      display: inline-block;
+      animation: marquee 10s linear infinite;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .logo-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .menu-button {
+      background: #222;
+      border: 2px solid #FF4500;
+      color: white;
+      padding: 20px 30px;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .menu-button:hover {
+      background: #FF4500;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .menu-button {
+        width: 80%;
+        text-align: center;
+      }
+
+      .back-button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+      }
+
+      .back-button svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .marquee {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="index.html" class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
+      Назад
+    </a>
+    <div class="marquee-container">
+      <div class="marquee">Комбо момбо анау мынау коясынго</div>
+    </div>
+  </div>
+
+  <div class="logo-container">
+    <img src="logo.png" alt="Логотип" />
+  </div>
+
+  <div class="menu-buttons">
+    <div class="menu-button" onclick="openPage('bar_menu.html')">Бар мәзірі</div>
+    <div class="menu-button" onclick="openPage('kitchen_menu.html')">Ас мәзірі</div>
+  </div>
+
+  <script>
+    function openPage(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

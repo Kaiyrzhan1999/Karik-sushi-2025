@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контактная информация</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://unpkg.com/imask"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .top-panel {
+            background: linear-gradient(45deg, #FF0000, #FFA500, #008000, #0000FF);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            height: clamp(2.5rem, 8vh, 4rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .top-panel::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: clamp(18px, 4vw, 24px);
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 140%;
+            width: auto;
+            position: relative;
+            z-index: 1;
+            filter: 
+                drop-shadow(0 0 2px rgba(255, 255, 255, 0.7))
+                drop-shadow(0 0 5px rgba(255, 165, 0, 0.5))
+                drop-shadow(0 0 10px rgba(255, 69, 0, 0.3))
+                drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-5px);
+            filter: 
+                drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))
+                drop-shadow(0 0 7px rgba(255, 165, 0, 0.6))
+                drop-shadow(0 0 12px rgba(255, 69, 0, 0.4))
+                drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: clamp(0.5rem, 2vh, 1rem) 10px;
+            overflow-y: auto;
+        }
+
+        .main-text {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            text-align: center;
+            margin-bottom: clamp(0.5rem, 2vh, 1rem);
+            color: #333;
+        }
+
+        .input-field {
+            width: 100%;
+            max-width: clamp(250px, 80vw, 400px);
+            height: clamp(2rem, 6vh, 3rem);
+            margin-bottom: clamp(0.4rem, 1.5vh, 0.8rem);
+            padding: 0 15px;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #45a049;
+        }
+
+        .input-field::placeholder {
+            color: #999;
+        }
+
+        .continue-btn {
+            width: 100%;
+            max-width: clamp(250px, 80vw, 400px);
+            height: clamp(2rem, 6vh, 3rem);
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            cursor: pointer;
+            margin-top: clamp(0.4rem, 1.5vh, 0.8rem);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        .continue-btn:hover {
+            background-color: #45a049;
+        }
+
+        .continue-btn:active {
+            transform: scale(0.98);
+        }
+
+        .privacy-text {
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+            text-align: center;
+            margin-top: clamp(0.5rem, 2vh, 1rem);
+            padding: 0 1rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-panel">
+            <button class="back-button" onclick="goBack()"><i class="fas fa-arrow-left"></i></button>
+            <img src="logo.png" alt="Логотип" class="logo">
+        </div>
+        <div class="main-content">
+            <p class="main-text" data-kk="БІЗ ТЕЗ ЖАУАП БЕРУ ҮШІН АҚПАРАТТЫ ТОЛТЫРЫҢЫЗ!" data-ru="ПОЖАЛУЙСТА, ЗАПОЛНИТЕ ИНФОРМАЦИЮ ЧТОБЫ МЫ БЫСТРО РЕАГИРОВАЛИ!" data-tr="LÜTFEN HIZLI YANIT VEREBİLMEMİZ İÇİN BİLGİLERİ DOLDURUN!" data-en="PLEASE FILL IN THE INFORMATION SO WE CAN RESPOND QUICKLY!">ПОЖАЛУЙСТА, ЗАПОЛНИТЕ ИНФОРМАЦИЮ ЧТОБЫ МЫ БЫСТРО РЕАГИРОВАЛИ!</p>
+            <input type="tel" class="input-field" id="mobileInput" data-kk-placeholder="Ұялы телефон" data-ru-placeholder="Мобильный" data-tr-placeholder="Cep telefonu" data-en-placeholder="Mobile">
+            <input type="text" class="input-field" id="nameInput" data-kk-placeholder="Тегі аты" data-ru-placeholder="Фамилия имя" data-tr-placeholder="Soyadı adı" data-en-placeholder="Last name first name">
+            <button class="continue-btn" onclick="submitFeedback()" data-kk="Жалғастыру" data-ru="Продолжить" data-tr="Devam et" data-en="Continue">Продолжить</button>
+            <p class="privacy-text" data-kk="Біз сіз бөліскен деректерді Karik sushi атынан өңдейміз және сіздің деректеріңізді осы компаниядан басқа үшінші тараптарға бермейміз." data-ru="Мы обрабатываем данные, которыми вы поделились с нами, от имени Karik sushi и не передаем ваши данные третьим лицам, кроме этой компании." data-tr="Bizimle paylaştığınız verileri Karik sushi adına işliyoruz ve verilerinizi bu şirket dışında üçüncü taraflarla paylaşmıyoruz." data-en="We process the data you shared with us on behalf of Karik sushi and do not share your data with third parties other than this company.">Мы обрабатываем данные, которыми вы поделились с нами, от имени Karik sushi и не передаем ваши данные третьим лицам, кроме этой компании.</p>
+        </div>
+    </div>
+    <script>
+        function applyLanguage() {
+            const lang = localStorage.getItem('language') || 'kk';
+            document.querySelectorAll('[data-kk][data-ru][data-tr][data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+            document.documentElement.lang = lang;
+
+            // Применяем перевод для placeholder полей ввода
+            document.querySelectorAll('.input-field').forEach(input => {
+                input.placeholder = input.getAttribute(`data-${lang}-placeholder`);
+            });
+        }
+
+        function goBack() {
+            window.location.href = 'feedback_comment.html';
+        }
+
+        function submitFeedback() {
+            const mobileInput = document.getElementById('mobileInput');
+            const mobileNumber = mobileInput.value;
+            const name = document.getElementById('nameInput').value;
+            const contactInfo = `${name} - ${mobileNumber}`;
+            localStorage.setItem('contactInfo', contactInfo);
+            console.log('Contact info saved:', contactInfo);
+            sendFeedbackToTelegram();
+        }
+
+
+        function sendFeedbackToTelegram() {
+            const tableNumber = localStorage.getItem('tableNumber');
+            const feedbackReason = localStorage.getItem('feedbackReason');
+            const feedbackComment = localStorage.getItem('feedbackComment');
+            const contactInfo = localStorage.getItem('contactInfo');
+
+            console.log('Retrieved data:', { tableNumber, feedbackReason, feedbackComment, contactInfo });
+
+            if (!tableNumber && !feedbackReason && !feedbackComment && !contactInfo) {
+                console.error('No data found in localStorage');
+                alert('Ошибка: Данные отзыва не найдены. Пожалуйста, заполните форму заново.');
+                window.location.href = 'feedback_reason.html';
+                return;
+            }
+
+            const [name, phone] = (contactInfo || '- -').split(' - ');
+
+            const message = `
+Afsona family
+
+Имя: ${name || 'Не указано'}
+Телефон: ${phone || 'Не указано'}
+
+Столик: ${tableNumber || 'Не указано'}
+Причина: ${feedbackReason || 'Не указано'}
+Отзыв: ${feedbackComment || 'Не указано'}
+            `;
+
+            console.log('Message to be sent:', message);
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzP6_l-GnFk4zd1FhUIwnnz1IRDQZVnpiM_3Dc-gV3hObGmWqrwF01DDtbH2nFZ63TO/exec';
+
+            fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => {
+                console.log('Success!', response);
+                localStorage.clear();
+                window.location.href = 'feedback_thank_you.html';
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Произошла ошибка при отправке отзыва. Пожалуйста, попробуйте еще раз.');
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            applyLanguage();
+
+            var phoneInput = document.getElementById('mobileInput');
+            var maskOptions = {
+                mask: '+{7}(000)000-00-00'
+            };
+            var mask = IMask(phoneInput, maskOptions);
+
+            phoneInput.addEventListener('focus', function() {
+                if (mask.unmaskedValue === '') {
+                    mask.value = '+7';
+                }
+            });
+
+            phoneInput.addEventListener('blur', function() {
+                if (mask.unmaskedValue === '') {
+                    mask.value = '';
+                }
+            });
+        });
+
+        window.onload = function() {
+            console.log('Page loaded. Current localStorage:', localStorage);
+        }
+    </script>
+</body>
+</html>
