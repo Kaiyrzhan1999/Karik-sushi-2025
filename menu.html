@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Мәзір</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Comfortaa:wght@700&display=swap');
 
     body, html {
       margin: 0;
@@ -53,16 +53,25 @@
       flex: 1;
       overflow: hidden;
       white-space: nowrap;
-      margin-left: 20px; /* отступ от кнопки Назад */
-      position: relative;
+      margin-left: 20px;
+      background: linear-gradient(90deg, #4C3C18, #A2A2D0);
+      border-radius: 8px;
     }
 
-    .marquee {
+    .marquee-link {
       display: inline-block;
-      animation: marquee 10s linear infinite;
-      font-size: 1.5rem;
+      padding: 10px 20px;
+      font-size: clamp(14px, 2vw, 18px);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Comfortaa', sans-serif;
       font-weight: bold;
-      color: white;
+      animation: marquee 18s linear infinite;
+    }
+
+    .marquee-link:hover {
+      animation-play-state: paused;
+      text-decoration: underline;
     }
 
     @keyframes marquee {
@@ -72,7 +81,7 @@
 
     .logo-container {
       text-align: center;
-      margin: 20px 0;
+      margin: 30px 0;
     }
 
     .logo-container img {
@@ -80,35 +89,45 @@
       height: auto;
     }
 
-    .menu-buttons {
+    .menu-container {
+      margin-top: 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       gap: 20px;
+      align-items: center;
       padding: 20px;
-      flex-wrap: wrap;
     }
 
     .menu-button {
-      background: #222;
-      border: 2px solid #FF4500;
+      width: 220px;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #d4af37, #9a9a7a);
       color: white;
-      padding: 20px 30px;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px #000;
+      letter-spacing: 1px;
     }
 
     .menu-button:hover {
-      background: #FF4500;
+      background: linear-gradient(145deg, #9a9a7a, #d4af37);
       transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
 
     @media (max-width: 600px) {
       .menu-button {
         width: 80%;
-        text-align: center;
+        font-size: 18px;
+      }
+
+      .marquee-link {
+        font-size: 14px;
       }
 
       .back-button {
@@ -119,10 +138,6 @@
       .back-button svg {
         width: 16px;
         height: 16px;
-      }
-
-      .marquee {
-        font-size: 1.1rem;
       }
     }
   </style>
@@ -136,7 +151,9 @@
       Назад
     </a>
     <div class="marquee-container">
-      <div class="marquee">Комбо момбо анау мынау коясынго</div>
+      <a href="https://www.instagram.com/_cafemes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="marquee-link">
+        🚀 Новое антикафе уже открылось! 🎲 Настолки, 🎮 PS5, ☕ чай, 🍪 уют! 👉 Подпишись на нас в Instagram!
+      </a>
     </div>
   </div>
 
@@ -144,15 +161,9 @@
     <img src="logo.png" alt="Логотип" />
   </div>
 
-  <div class="menu-buttons">
-    <div class="menu-button" onclick="openPage('bar_menu.html')">Бар мәзірі</div>
-    <div class="menu-button" onclick="openPage('kitchen_menu.html')">Ас мәзірі</div>
+  <div class="menu-container">
+    <button class="menu-button" onclick="window.location.href='kitchen_menu.html'">🍣 Кухня</button>
+    <button class="menu-button" onclick="window.location.href='bar_menu.html'">🍹 Бар</button>
   </div>
-
-  <script>
-    function openPage(page) {
-      window.location.href = page;
-    }
-  </script>
 </body>
 </html>
