@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мәзір</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Comfortaa:wght@700&display=swap');
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .top-bar {
+      height: 3cm;
+      background: #000;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+    }
+
+    .marquee-container {
+      flex: 1;
+      white-space: nowrap;
+      background: linear-gradient(90deg, #4C3C18, #A2A2D0);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .marquee-link {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: clamp(14px, 2vw, 18px);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Comfortaa', sans-serif;
+      font-weight: bold;
+      animation: marquee 18s linear infinite;
+    }
+
+    .marquee-link:hover {
+      animation-play-state: paused;
+      text-decoration: underline;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .logo-container {
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .menu-button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 30px;
+      font-size: 18px;
+      font-family: 'Comfortaa', sans-serif;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #c0b283, #6a6a4f);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px #000;
+      letter-spacing: 0.5px;
+      min-width: 200px;
+    }
+
+    .menu-button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #d4af37, #5a5a3f);
+      box-shadow: 0 10px 25px rgba(255,255,255,0.15);
+    }
+
+    .menu-button span {
+      font-size: 22px;
+    }
+
+    @media (max-width: 600px) {
+      .menu-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .menu-button {
+        width: 80%;
+        font-size: 16px;
+      }
+
+      .marquee-link {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="marquee-container">
+      <a href="https://www.instagram.com/_cafemes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="marquee-link">
+        🚀 Жаңа антикафе ашылды! 🎲 Ойындар, 🎮 PS5, ☕ шай, 🍪 жайлы атмосфера! 👉 Instagram-да бізге жазылыңыз!
+      </a>
+    </div>
+  </div>
+
+  <div class="logo-container">
+    <img src="logo.png" alt="Логотип" />
+  </div>
+
+  <div class="menu-container">
+    <button class="menu-button" onclick="window.location.href='bar_menu.html'">
+      <span>🍸</span> Меню бара
+    </button>
+    <button class="menu-button" onclick="window.location.href='kitchen_menu.html'">
+      <span>🍱</span> Меню кухни
+    </button>
+    <button class="menu-button" onclick="window.location.href='promotions.html'">
+      <span>🎁</span> Наши акции
+    </button>
+  </div>
+</body>
+</html>
