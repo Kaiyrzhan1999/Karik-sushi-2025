@@ -4,216 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Меню</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #fff;
-      color: #222;
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: #F0E68C; /* Хаки */
+      line-height: 1.6;
     }
-    .header {
-      background: #e60013;
-      color: #fff;
-      text-align: center;
-      padding: 1.2rem 0 0.7rem 0;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 0.08em;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .group {
-      margin: 2.2rem auto 1.5rem auto;
-      max-width: 700px;
-      padding: 0 1rem;
-    }
-    .group-title {
-      font-size: 1.5rem;
-      color: #e60013;
-      font-weight: 700;
-      margin-bottom: 0.7rem;
-      border-bottom: 2px solid #e60013;
-      display: inline-block;
-      padding-bottom: 0.2rem;
-    }
-    .dish-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.2rem 0;
-    }
-    .dish {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #eee;
-      font-size: 1.08rem;
-    }
-    .dish:last-child { border-bottom: none; }
-    .dish-name { font-weight: 500; }
-    .dish-price { color: #e60013; font-weight: 600; }
-    .combo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
-      justify-content: center;
-      margin-top: 1.2rem;
-    }
-    .combo-card {
-      background: #fff;
-      border-radius: 1.1rem;
-      box-shadow: 0 2px 12px rgba(230,0,19,0.08);
-      max-width: 320px;
-      width: 100%;
-      padding: 1rem 1rem 0.7rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 2px solid #e60013;
-    }
-    .combo-card img {
-      width: 100%;
-      border-radius: 0.7rem;
-      margin-bottom: 0.7rem;
-      background: #eee;
-      object-fit: cover;
-      max-height: 180px;
-    }
-    .combo-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #e60013;
-      margin-bottom: 0.3rem;
-      text-align: center;
-    }
-    .combo-desc {
-      font-size: 0.98rem;
-      color: #333;
-      margin-bottom: 0.3rem;
-      text-align: center;
-    }
-    .combo-price {
-      font-size: 1.1rem;
-      color: #e60013;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    @media (max-width: 700px) {
-      .header { font-size: 1.2rem; padding: 0.8rem 0 0.5rem 0; }
-      .group-title { font-size: 1.1rem; }
-      .combo-card { max-width: 98vw; padding: 0.7rem 0.3rem 0.5rem 0.3rem; }
-      .group { padding: 0 0.2rem; }
-      .combo-grid { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
-    }
-  </style>
-</head>
-<body>
-  <a href="index.html" class="back-btn">
-    <svg viewBox="0 0 24 24" fill="none" width="22" height="22" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
-      <path d="M15 19l-7-7 7-7" stroke="#e60013" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span>Назад</span>
-  </a>
-  <style>
-    .back-btn {
-      position: fixed;
-      top: 6px;
-      left: 18px;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(255,255,255,0.95);
-      color: #e60013;
-      font-weight: 700;
-      font-size: 1.08rem;
-      padding: 8px 18px 8px 12px;
-      border-radius: 30px;
-      box-shadow: 0 2px 10px rgba(230,0,19,0.08);
-      border: 2px solid #e60013;
-      text-decoration: none;
-      z-index: 5000;
-      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
-    }
-    .back-btn:hover {
-      background: #e60013;
-      color: #fff;
-      box-shadow: 0 4px 16px rgba(230,0,19,0.18);
-    }
-    .back-btn svg {
-      display: block;
-    }
-    @media (max-width: 600px) {
-      .back-btn {
-        top: 2px;
-        left: 8px;
-        font-size: 0.98rem;
-        padding: 7px 13px 7px 8px;
-      }
-    }
-  </style>
 
-  <div class="menu-bar">Меню бара</div>
-
-  <style>
     .menu-bar {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: #57A639;
-      color: #fff;
-      font-size: 24px;
-      font-weight: bold;
+      background: #000;
+      color: gold;
+      font-size: 26px;
+      font-weight: 700;
       text-align: center;
       padding: 12px 0;
-      z-index: 4000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.1);
     }
-  </style>
 
-  <div style="height: 48px;"></div> <!-- отступ для фиксированной панели -->
+    .marquee {
+      background: #000;
+      color: gold;
+      font-size: 20px;
+      padding: 8px 0;
+      font-weight: 600;
+      text-align: center;
+    }
 
-  <!-- Добавляем новые шрифты -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    /* Обновленные стили шрифтов */
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
+    .group {
+      margin: 100px auto 1.5rem auto;
+      max-width: 700px;
+      padding: 0 1rem;
     }
-    .header, .group-title {
-      font-family: 'Montserrat', sans-serif;
+
+    .group-title {
+      font-size: 1.6rem;
+      color: gold;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      border-bottom: 2px solid gold;
+      display: inline-block;
+      padding-bottom: 0.3rem;
     }
-    
-    /* Стили для кнопок соцсетей */
+
+    .dish-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.2rem 0;
+    }
+
+    .dish {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #444;
+      font-size: 1.08rem;
+    }
+
+    .dish:last-child { border-bottom: none; }
+
+    .dish-name { color: #F5F5DC; } /* светлый оттенок хаки */
+    .dish-price { color: gold; font-weight: 700; }
+
     .social-buttons {
       position: fixed;
       bottom: 20px;
       right: 20px;
       display: flex;
-      gap: 10px;
-      z-index: 100;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
     }
+
     .social-button {
-      width: 50px;
-      height: 50px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .social-button:hover {
       transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
     }
+
     .whatsapp {
       background: #25D366;
     }
+
     .instagram {
-      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C);
     }
+
     .social-logo {
       width: 30px;
       height: 30px;
@@ -221,6 +115,15 @@
   </style>
 </head>
 <body>
+
+  <div class="menu-bar">Меню бара</div>
+
+  <div class="marquee">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      Добро пожаловать в Karik Sushi! Попробуйте наши новинки! — 🍣🍹 Акции каждую неделю — Бар & Кухня — Наслаждайтесь!
+    </marquee>
+  </div>
+
   <!-- Прохладительные напитки -->
   <div class="group">
     <div class="group-title">Прохладительные напитки</div>
